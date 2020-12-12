@@ -1,0 +1,21 @@
+
+
+
+
+<mat-card >
+    <mat-card-title>
+          Confirm Delete
+    </mat-card-title>
+    <mat-card-content>
+        <div style="margin-top: 30px;">
+            <p style="font-size: 18px;">{{message}} </p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      
+        <button  color="primary" style="margin:5px;" (click)="close(true)" mat-flat-button >Ok</button>
+        <button color="warn" style="margin:5px;" (click)="close(false)" mat-flat-button>Cancel</button>
+    </mat-card-actions>
+
+
+</mat-card>

@@ -1,0 +1,39 @@
+
+<mat-card>
+    <mat-card-title>
+      {{title}}
+    </mat-card-title>
+    <form  #f="ngForm"  >
+        <mat-card-content >
+        
+            <div  class="row justify-content-md-center form-group" style=" padding: 5px; margin:4px;">
+                
+                <input class="form-control" required [class.text-error]="(nameInput.invalid&&nameInput.touched)"   [(ngModel)]="product.Name" #nameInput="ngModel" name="name" type="text"  placeholder="name">
+                <div *ngIf="nameInput.invalid && nameInput.touched" ><small class="text-error"> Field is Required</small></div> 
+            </div>
+            <div  class="row justify-content-md-center form-group" style=" padding: 5px; margin:4px;">
+                
+                <input class="form-control" required [class.text-error]="(priceInput.invalid&&priceInput.touched)"   [(ngModel)]="product.Price" #priceInput="ngModel" name="price" type="number"  placeholder="price">
+                <div *ngIf="priceInput.invalid && priceInput.touched" ><small class="text-error"> Field is Required</small></div> 
+            </div>
+            <div   class="row justify-content-md-center form-group"  style=" padding: 5px; margin:4px;">
+
+                       
+                <input   ngModel name="img" class="d-none" #imgInput type="file" accept="image/x-png,image/gif,image/jpeg" (change)="onChange($event.target.files)">
+                <img [src]='product.ImgThumbnial' (dblclick)="imgInput.click()">
+            </div> 
+        
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+
+        <mat-spinner *ngIf="Proccessing" diameter="25" style="margin: 5px; text-align: center;"></mat-spinner>
+        <button *ngIf="!Proccessing" mat-flat-button color="primary" type="submit"  (click)="save()" [disabled]="!f.valid"
+         style="margin: 5px;"  >
+        Add
+        </button>
+        <button (click)="cancel()"  mat-flat-button color="warn" style="margin: 5px; ">
+        Cancel</button>
+    </mat-card-actions>
+    </form>
+</mat-card>

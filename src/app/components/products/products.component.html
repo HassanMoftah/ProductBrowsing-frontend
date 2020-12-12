@@ -1,0 +1,47 @@
+<mat-spinner *ngIf="Loading" class="center" diameter="25"></mat-spinner>
+<div *ngIf="!Loading" class="page-container">
+     <div class="container" style="margin-top: 5vh;">
+         <div class="row ml-0 header-container">
+            
+            <div class="ml-auto mr-0">
+                <button  mat-flat-button color="primary" (click)="onExportClicked()" > Export To Excel</button>
+                <button  mat-flat-button color="primary" (click)="onAddNewClicked()" > Add New</button>
+            </div>
+         </div>
+        
+            <div class="row ">
+             <div class="container-fluid">
+        
+                <div class=" content">
+                     <div class="card" *ngFor="let prod of products">
+                        <img [src]="prod.ImgThumbnial" >
+                        <div class="row">
+                            <div class="col-md-6"><p style="font-weight: bold;">{{prod.Name}}</p></div>
+                            <div class="col-md-6"><p  style="font-weight: bold;">{{prod.Price}} $</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>{{prod.Lastupdated | date:'short'}}</p>
+                            </div>
+                        </div>
+                        <div class="row ml-0">
+                           
+                                <mat-icon (click)="onEditClicked(prod)">edit</mat-icon>
+                            
+                            <div class="ml-auto mr-3">
+                              <mat-icon (click)="onDeleteClicked(prod)">delete</mat-icon>
+                            </div>
+                        </div>
+                     </div>
+                     
+                </div>
+           
+             </div>
+
+            
+              
+            
+          
+          </div>
+     </div>
+</div>

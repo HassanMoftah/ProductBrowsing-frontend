@@ -1,0 +1,50 @@
+.page-container{
+    height: 100vh;
+    overflow-y: hidden;
+    background-color: rgb(236, 235, 235);
+}
+.header-container{
+    border: 1px solid rgb(173, 173, 173);
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding: 10px;
+}
+.content{
+    overflow-y:auto ;
+    height: 80vh;
+    overflow-x: hidden;
+    margin-top: 10px;
+    width: 100%;
+    
+}
+.card{
+    height:max-content;
+    background-color: rgba(236, 233, 233, 0.671);
+    width: 150px;
+    margin: 3px; 
+    display: inline-flex;
+  
+}
+img{
+    height: 15vh;
+    width: 148px;
+    
+}
+button{
+    margin: 3px;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 48%;
+}
+p{
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 2px;
+}
+mat-icon{
+    cursor: pointer;
+}
